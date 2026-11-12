@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khagrachhari Electricity Service</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f1f5f9;
+ color:#172033;
+}
+header{
+ background:#075985;
+ color:white;
+ padding:25px 15px;
+ text-align:center;
+}
+header h1{margin:5px}
+nav{
+ background:#064663;
+ padding:13px;
+ text-align:center;
+}
+nav a{
+ color:white;
+ text-decoration:none;
+ margin:10px;
+}
+.hero{
+ text-align:center;
+ padding:30px 15px;
+ background:#e0f2fe;
+}
+.container{
+ max-width:750px;
+ margin:20px auto;
+ padding:20px;
+}
+.card{
+ background:white;
+ padding:22px;
+ border-radius:12px;
+ box-shadow:0 3px 12px #0001;
+ margin-bottom:20px;
+}
+h2{color:#075985}
+label{
+ display:block;
+ margin-top:13px;
+ font-weight:bold;
+}
+input,select,textarea{
+ width:100%;
+ padding:12px;
+ margin-top:7px;
+ border:1px solid #cbd5e1;
+ border-radius:7px;
+ font-size:15px;
+}
+button{
+ background:#0284c7;
+ color:white;
+ border:0;
+ padding:13px;
+ width:100%;
+ border-radius:7px;
+ margin-top:18px;
+ font-size:16px;
+ cursor:pointer;
+}
+button:hover{background:#0369a1}
+.notice{
+ background:#fff7ed;
+ padding:15px;
+ border-left:4px solid orange;
+ border-radius:6px;
+}
+#result{margin-top:15px;color:#047857}
+footer{
+ background:#064663;
+ color:white;
+ text-align:center;
+ padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>⚡ Khagrachhari Electricity Service</h1>
+<p>বিদ্যুৎ সেবা ও অভিযোগ ব্যবস্থাপনা</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#complaint">Complaint</a>
+<a href="#track">Track</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section class="hero" id="home">
+<h2>আপনার বিদ্যুৎ সমস্যার সমাধানে আমরা</h2>
+<p>বিদ্যুৎ সংক্রান্ত যেকোনো সমস্যা আমাদের জানান।</p>
+</section>
+
+<div class="container">
+
+<div class="notice">
+<strong>⚠️ জরুরি সতর্কতা:</strong>
+বিদ্যুতের ছেঁড়া তার স্পর্শ করবেন না।
+নিরাপদ দূরত্ব বজায় রাখুন।
+</div>
+
+<section class="card" id="complaint">
+<h2>📝 বিদ্যুৎ সমস্যার অভিযোগ</h2>
+
+<form id="complaintForm">
+
+<label>আপনার নাম</label>
+<input id="name" type="text" placeholder="আপনার নাম লিখুন" required>
+
+<label>মোবাইল নম্বর</label>
+<input id="phone" type="tel" placeholder="মোবাইল নম্বর লিখুন" required>
+
+<label>এলাকার নাম</label>
+<input id="area" type="text" placeholder="আপনার এলাকার নাম" required>
+
+<label>সম্পূর্ণ ঠিকানা</label>
+<input id="address" type="text" placeholder="আপনার ঠিকানা">
+
+<label>সমস্যার ধরন</label>
+<select id="problem" required>
+<option value="">সমস্যা নির্বাচন করুন</option>
+<option>বিদ্যুৎ নেই</option>
+<option>বিদ্যুতের তার ছিঁড়ে গেছে</option>
+<option>ট্রান্সফরমার সমস্যা</option>
+<option>লো ভোল্টেজ</option>
+<option>মিটার সমস্যা</option>
+<option>অন্যান্য সমস্যা</option>
+</select>
+
+<label>সমস্যার বিস্তারিত</label>
+<textarea id="details" rows="4"
+placeholder="সমস্যার বিস্তারিত লিখুন" required></textarea>
+
+<label>সমস্যার ছবি (ঐচ্ছিক)</label>
+<input id="photo" type="file" accept="image/*">
+
+<button type="submit">অভিযোগ জমা দিন</button>
+
+</form>
+
+<div id="result"></div>
+</section>
+
+<section class="card" id="track">
+<h2>🔎 অভিযোগের অবস্থা দেখুন</h2>
+<label>অভিযোগ আইডি লিখুন</label>
+<input id="trackId" placeholder="আপনার Complaint ID">
+<button onclick="trackComplaint()">অবস্থা দেখুন</button>
+<div id="trackResult"></div>
+</section>
+
+<section class="card" id="contact">
+<section class="card" id="contact">
+    <h2>📞 যোগাযোগ</h2>
+    <p>Khagrachhari Electricity Service</p>
+    <p>অফিসের ঠিকানা: খাগড়াছড়ি</p>
+    <p>অভিযোগ কেন্দ্র: <a href="tel:01713850208" style="color: #0056b3; font-weight: bold;">০১৭১৩-৮৫০২০৮</a></p>
+    <p>অফিস ফোন: <a href="tel:037161874" style="color: #0056b3; font-weight: bold;">০৩৭১-৬১৮৭৪</a></p>
+    <p>জাতীয় হেল্পলাইন: <a href="tel:16999" style="color: #0056b3; font-weight: bold;">১৬৯৯৯</a></p>
+</section>
+
+</div>
+
+<footer>
+<p>© 2026 Khagrachhari Electricity Service</p>
+<p>Electricity Complaint Management System</p>
+</footer>
+
+<script>
+document.getElementById("complaintForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let id="KHE-"+Date.now();
+
+let complaint={
+ id:id,
+ name:document.getElementById("name").value,
+ phone:document.getElementById("phone").value,
+ area:document.getElementById("area").value,
+ address:document.getElementById("address").value,
+ problem:document.getElementById("problem").value,
+ details:document.getElementById("details").value,
+ status:"অভিযোগ গ্রহণ করা হয়েছে"
+};
+
+let data=JSON.parse(
+ localStorage.getItem("complaints") || "[]"
+);
+
+data.push(complaint);
+
+localStorage.setItem("complaints",JSON.stringify(data));
+
+document.getElementById("result").innerHTML=
+"অভিযোগ জমা হয়েছে! আপনার ID: "+id+
+"<br>এই ID সংরক্ষণ করুন।";
+
+this.reset();
+});
+
+function trackComplaint(){
+
+let id=document.getElementById("trackId").value;
+
+let data=JSON.parse(
+ localStorage.getItem("complaints") || "[]"
+);
+
+let found=data.find(c=>c.id===id);
+
+document.getElementById("trackResult").innerHTML=
+found ?
+"নাম: "+found.name+
+"<br>সমস্যা: "+found.problem+
+"<br>অবস্থা: "+found.status :
+"এই ID পাওয়া যায়নি।";
+}
+</script>
+
+</body>
+</html>
